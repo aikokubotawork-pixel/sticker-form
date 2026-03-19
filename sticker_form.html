@@ -626,7 +626,7 @@ async function doSubmit(){
       files: filesData
     };
     const GAS_URL='https://script.google.com/macros/s/AKfycbxw9A57e6JIDPPOe5PfofsjF7Jchvk09eTpPw2YGMAF5vBdhtm054BJh7JuoZpdwFevRg/exec';
-    const res=await fetch(GAS_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const res=await fetch(GAS_URL,{method:'POST',body:JSON.stringify(payload)});
     const result=await res.json();
     if(result.status==='ok'){
       showMsg('ok','✅ 送信完了しました！確認メールをご確認ください。');
