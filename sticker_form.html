@@ -616,14 +616,13 @@ async function doSubmit(){
   showMsg('wait','送信中… しばらくお待ちください。');
   document.getElementById('submitBtn').disabled=true;
   try{
-    const activeFiles = uploads.filter(Boolean);
-    const filesData = await Promise.all(activeFiles.map(f=>fileToBase64(f)));
+    // 画像はBase64でGASに送らず、メールで別途送付してもらう
     const payload = {
       name, phone, email, address,
       bike: BIKES[selBike].name, color: selColor,
       cut: selCut, style: selStyle,
       message, notes, price_agreed: 'true',
-      files: filesData
+      fileCount: uploads.filter(Boolean).length
     };
     const GAS_URL='https://script.google.com/macros/s/AKfycbxw9A57e6JIDPPOe5PfofsjF7Jchvk09eTpPw2YGMAF5vBdhtm054BJh7JuoZpdwFevRg/exec';
     const encoded = encodeURIComponent(JSON.stringify(payload));
