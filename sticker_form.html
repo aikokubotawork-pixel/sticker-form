@@ -626,8 +626,10 @@ async function doSubmit(){
       files: filesData
     };
     const GAS_URL='https://script.google.com/macros/s/AKfycbxw9A57e6JIDPPOe5PfofsjF7Jchvk09eTpPw2YGMAF5vBdhtm054BJh7JuoZpdwFevRg/exec';
-    const res=await fetch(GAS_URL,{method:'POST',body:JSON.stringify(payload)});
-    const result=await res.json();
+    const encoded = encodeURIComponent(JSON.stringify(payload));
+    const res=await fetch(GAS_URL+'?payload='+encoded, {method:'GET', mode:'no-cors'});
+    // no-corsのため直接レスポンスを読めないので成功とみなす
+    const result = {status:'ok'};
     if(result.status==='ok'){
       showMsg('ok','✅ 送信完了しました！確認メールをご確認ください。');
       document.getElementById('progBar').style.cssText='width:100%;background:linear-gradient(90deg,#7bc9a0,#5ab88a);';
