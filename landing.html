@@ -23,7 +23,7 @@
   .hero{background:linear-gradient(160deg,#0d3333 0%,#1a5a5a 50%,#0d3333 100%);color:white;padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden;}
   .hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(120,180,180,0.3) 0%,transparent 70%);pointer-events:none;}
   .hero-eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;color:var(--teal-light);text-transform:uppercase;margin-bottom:16px;}
-  .hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(24px,5vw,48px);font-weight:700;line-height:1.2;margin-bottom:20px;}
+  .hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(30px,7vw,56px);font-weight:700;line-height:1.4;margin-bottom:16px;}
   .hero h1 span{color:#a8d8d8;}
   .hero-catch{font-size:clamp(16px,3vw,22px);color:rgba(255,255,255,0.85);margin-bottom:32px;line-height:1.6;}
   
@@ -32,7 +32,7 @@
   .catch-badge{background:rgba(120,180,180,0.25);border:1.5px solid rgba(120,180,180,0.5);border-radius:50px;padding:10px 22px;font-size:15px;font-weight:700;color:white;}
   .catch-badge span{color:#a8d8d8;}
 
-  .hero-btn{display:block;background:var(--teal);color:white;font-family:'Noto Sans JP',sans-serif;font-size:18px;font-weight:700;padding:18px 16px;border-radius:50px;text-decoration:none;letter-spacing:1px;transition:all .2s;box-shadow:0 4px 20px rgba(120,180,180,0.4);text-align:center;white-space:nowrap;}
+  .hero-btn{display:inline-block;background:var(--teal);color:white;font-family:'Noto Sans JP',sans-serif;font-size:18px;font-weight:700;padding:18px 56px;border-radius:50px;text-decoration:none;letter-spacing:1px;transition:all .2s;box-shadow:0 4px 20px rgba(120,180,180,0.4);}
   .hero-btn:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(120,180,180,0.5);}
 
   /* CONTAINER */
@@ -79,11 +79,11 @@
 
   /* FLOW */
   .flow-wrap{position:relative;}
-  .flow-line{position:absolute;left:27px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--teal),var(--teal-light));z-index:0;}
-  .flow-step{display:flex;gap:20px;align-items:flex-start;margin-bottom:24px;position:relative;z-index:1;}
-  .flow-icon{flex-shrink:0;width:56px;height:56px;border-radius:50%;background:var(--teal);border:4px solid white;box-shadow:0 0 0 2px var(--teal);display:flex;align-items:center;justify-content:center;font-size:20px;}
-  .flow-icon.goal{background:linear-gradient(135deg,var(--teal),var(--teal-dark));box-shadow:0 0 0 3px var(--teal),0 4px 16px rgba(120,180,180,0.4);}
-  .flow-card{background:var(--teal-pale);border:1.5px solid var(--border);border-radius:12px;padding:16px 20px;flex:1;}
+  .flow-line{display:none;}
+  .flow-step{display:block;margin-bottom:12px;}
+  .flow-icon{display:none;}
+  .flow-icon.goal{display:none;}
+  .flow-card{background:var(--teal-pale);border:1.5px solid var(--border);border-radius:12px;padding:14px 18px;display:block;width:100%;}
   .flow-card.goal-card{background:linear-gradient(135deg,var(--teal-light),#e0f0f0);border-color:var(--teal);}
   .flow-step-badge{display:inline-block;background:var(--teal);color:white;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-bottom:4px;}
   .flow-step-badge.goal-badge{background:var(--teal-dark);}
@@ -96,7 +96,7 @@
   .cta-section{background:linear-gradient(160deg,#0d3333,#1a5a5a);padding:64px 24px;text-align:center;}
   .cta-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,36px);font-weight:700;color:white;margin-bottom:12px;}
   .cta-sub{font-size:15px;color:rgba(255,255,255,0.8);margin-bottom:36px;}
-  .cta-btn{display:block;background:var(--teal);color:white;font-family:'Noto Sans JP',sans-serif;font-size:18px;font-weight:700;padding:20px 16px;border-radius:50px;text-decoration:none;letter-spacing:1px;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:all .2s;text-align:center;white-space:nowrap;}
+  .cta-btn{display:inline-block;background:var(--teal);color:white;font-family:'Noto Sans JP',sans-serif;font-size:18px;font-weight:700;padding:20px 64px;border-radius:50px;text-decoration:none;letter-spacing:1px;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:all .2s;}
   .cta-btn:hover{background:#6aa4a4;transform:translateY(-2px);}
   .cta-note{margin-top:16px;font-size:12px;color:rgba(255,255,255,0.6);}
 
@@ -124,7 +124,7 @@
 <div class="hero">
   <div class="container">
     <div class="hero-eyebrow">Original Sticker Design</div>
-    <h1>あなたの<span>Vストローム</span>に、<br>世界にひとつのステッカーを。</h1>
+    <h1>あなたの<br><span>Vストロームに、</span><br>世界にひとつの<br>ステッカーを。</h1>
     <p class="hero-catch">生成AIを活用したオリジナルデザインで<br>あなただけのバイクライフを彩ります。</p>
     <div class="catch-badges">
       <div class="catch-badge">🏍️ <span>直径5cm</span> 屋外対応ステッカー</div>
@@ -228,7 +228,7 @@
           </div>
         </div>
       </div>
-      <div style="margin-top:12px;font-size:12px;color:var(--gray-light);text-align:right;">お問い合わせ：<a href="/cdn-cgi/l/email-protection#64070b0a1005071024100c0d0a0f0d4a070b4a0e14" style="color:var(--teal-dark);"><span class="__cf_email__" data-cfemail="482b27263c292b3c083c2021262321662b27662238">[email&#160;protected]</span></a></div>
+      <div style="margin-top:12px;font-size:12px;color:var(--gray-light);text-align:right;">お問い合わせ：<a href="/cdn-cgi/l/email-protection#6b0804051f0a081f2b1f030205000245080445011b" style="color:var(--teal-dark);"><span class="__cf_email__" data-cfemail="b7d4d8d9c3d6d4c3f7c3dfded9dcde99d4d899ddc7">[email&#160;protected]</span></a></div>
     </div>
   </div>
 </div>
